@@ -11,12 +11,19 @@ Frameworks used:
 ## Bestandteile des Projekts
 
 ### Frontend
+1. Applikation hat ein Singlepage-Frontend.
+2. Der Hintergrund wird in Angular gesetzt.
+    - Merke: Styling folgt zum Schluss. Am Anfang sollen nur die Modal's funktionieren, in denen die Aufgaben erstellt werden. Später soll die Chatfunktion auch als Modal da sein.
+3. Die Anker werden angefertigt. (Forms für Anmeldung, Erstellung und Bearbeitung)
+    - Im Anschluss folgt die Backend Logik für die API in Schritt 3 im Backend.
 
 ### Backend
 1. Verbindung zu Datenbank herstellen in der .env.
 2. Migrationen vorbereiten wie in dem [DB-Schema](#database) beschrieben.
     - php artisan make:migration create_users_table
     - php artisan make:migration create_tasks_table
+    - php artisan migrate (DB finished)
+3. API wird erstellt.
 
 ### Database
 <img src="./doc_rsrcs/first_db_schema.png" alt="first db schema" width="900" height="600">
