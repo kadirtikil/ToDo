@@ -13,11 +13,15 @@ Frameworks used:
 ### Frontend
 
 ### Backend
+1. Verbindung zu Datenbank herstellen in der .env.
+2. Migrationen vorbereiten wie in dem [DB-Schema](#database) beschrieben.
+    - php artisan make:migration create_users_table
+    - php artisan make:migration create_tasks_table
 
 ### Database
 <img src="./doc_rsrcs/first_db_schema.png" alt="first db schema" width="900" height="600">
 
-https://dbdiagram.io/
+<h6>https://dbdiagram.io/</h6>
 
 ## Allgemeine Nutzung der Applikation 
 Der Nutzer soll in der Lage sein, anstehende Aufgaben auf dieser Applikation zu dokumentieren.
