@@ -15,7 +15,7 @@ Frameworks used:
 ### Backend
 
 ### Database
-<img src="./doc_rsrcs/first_db_schema.png" alt="first db schema" width="200" height="200">
+<img src="./doc_rsrcs/first_db_schema.png" alt="first db schema" width="800" height="800">
 
 https://dbdiagram.io/
 
