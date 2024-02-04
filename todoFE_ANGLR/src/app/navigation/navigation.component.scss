@@ -1,0 +1,43 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3498db; /* Change to your desired background color */
+    padding: 10px;
+    color: #ffffff; /* Change to your desired text color */
+    font-family: 'Arial', sans-serif; /* Change to your desired font-family */
+  
+    .navbar-title {
+      font-size: 24px;
+      font-weight: bold;
+    }
+  
+    .navbar-options {
+      display: flex;
+      align-items: center;
+  
+      .navbar-username {
+        margin-right: 20px;
+      }
+  
+      .navbar-option {
+        cursor: pointer;
+        margin-right: 15px;
+  
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+  
+      .navbar-search {
+        margin-right: 20px;
+  
+        input {
+          padding: 5px;
+          border: none;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+  
