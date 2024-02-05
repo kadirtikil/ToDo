@@ -6,12 +6,14 @@ import { CreateTasksComponent } from './create-tasks/create-tasks.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ShowtasksComponent } from './showtasks/showtasks.component';
 import { SigninComponent } from './signin/signin.component';
-
+import { SignupComponent } from './signup/signup.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NavigationComponent, NotFoundComponent, SigninComponent],
+  imports: [CommonModule, RouterOutlet, 
+            NavigationComponent, NotFoundComponent, 
+            SigninComponent, SignupComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

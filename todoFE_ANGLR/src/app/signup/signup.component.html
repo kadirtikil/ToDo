@@ -1,1 +1,9 @@
-<p>signup works!</p>
+<form [formGroup]="signupForm" (ngSubmit)="submitButtonClicked()" action="">
+    <input formControlName="name" id="name" type="text" placeholder="name">
+    <p *ngIf="signupForm.get('name')?.hasError('name')">Email is invalid!</p>
+    <input formControlName="email" id="email" type="text" placeholder="email">
+    <p *ngIf="signupForm.get('email')?.hasError('email')">Email is invalid!</p>
+    <input formControlName="password" id="password" type="text" placeholder="password">
+    <p *ngIf="signupForm.get('password')?.hasError('minlength')">Password is invalid!</p>
+    <button type="submit">Submit</button>
+</form>
