@@ -14,7 +14,8 @@ Frameworks used:
 1. Applikation hat ein Singlepage-Frontend.
 2. Der Hintergrund wird in Angular gesetzt.
     - Merke: Styling folgt zum Schluss. Am Anfang sollen nur die Modal's funktionieren, in denen die Aufgaben erstellt werden. Später soll die Chatfunktion auch als Modal da sein.
-3. Die Anker werden angefertigt. (Forms für Anmeldung, Erstellung und Bearbeitung)
+3. Validators wurden implementiert. Es existieren eigentlich eigene API's für diese Zwecke aber Egalomat3000.
+4. Die Anker werden angefertigt. (Forms für Anmeldung, Erstellung und Bearbeitung)
     - Im Anschluss folgt die Backend Logik für die API in Schritt 3 im Backend.
 
 ### Backend

@@ -1,5 +1,7 @@
-<form action="">
-    <input type="text" placeholder="name or email">
-    <input type="text" placeholder="password">
-    <input type="button" placeholder="submit">
+<form [formGroup]="signinForm" (ngSubmit)="submitButtonClicked()" action="">
+    <input formControlName="email" id="email" type="text" placeholder="email">
+    <p *ngIf="signinForm.get('email')?.hasError('email')">Email is invalid!</p>
+    <input formControlName="password" id="password" type="text" placeholder="password">
+    <p *ngIf="signinForm.get('password')?.hasError('minlength')">Password is invalid!</p>
+    <button type="submit">Submit</button>
 </form>
