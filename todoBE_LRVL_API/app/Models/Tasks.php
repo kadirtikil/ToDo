@@ -5,19 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
-class User extends Model
+class Tasks extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'username',
-        'email',
-        'password',
-        'role',
-        'phone',
-        'remember_token',
+        'title',
+        'body',
+        'status',
+        'category',
     ];
-
-    public $timestamps = true;
 }
