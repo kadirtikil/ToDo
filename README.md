@@ -4,8 +4,12 @@ This is a Webapplication to get started in Fullstack Development.
 
 Frameworks used:
 - Angular
-- Laravel
-- MySQL (will be later replaced by AWS)
+- Laravel (will be later placed together with the DB in AWS)
+- MySQL 
+
+Tools used:
+- dbdiagram.io
+- Postman
 
 
 ## Bestandteile des Projekts
