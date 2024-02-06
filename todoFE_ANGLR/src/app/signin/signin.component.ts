@@ -25,5 +25,7 @@ export class SigninComponent {
     console.log(this.signinForm.value);
     // this function will check given input and sanitize it, 
     // before sending it to the backend API via httpclient. 
+    // API connection handled here
+
   }
 }

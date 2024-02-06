@@ -7,13 +7,15 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ShowtasksComponent } from './showtasks/showtasks.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
-
+import { EdittasksComponent } from './edittasks/edittasks.component';
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, 
             NavigationComponent, NotFoundComponent, 
-            SigninComponent, SignupComponent],
+            SigninComponent, SignupComponent,
+            ShowtasksComponent, CreateTasksComponent,
+            EdittasksComponent, ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

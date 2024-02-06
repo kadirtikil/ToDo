@@ -1,6 +1,6 @@
-// post-form.component.scss
+// task-edit.component.scss
 
-.post-form {
+.task-edit {
     width: 50%;
     margin: 20px auto;
   
@@ -14,7 +14,8 @@
       }
   
       input,
-      textarea {
+      textarea,
+      select {
         margin-bottom: 15px;
         padding: 10px;
         border: 1px solid #ddd;
@@ -23,7 +24,7 @@
   
       button {
         padding: 10px;
-        background-color: #007bff;
+        background-color: #28a745; /* Green color for the update button */
         color: #fff;
         border: none;
         border-radius: 4px;

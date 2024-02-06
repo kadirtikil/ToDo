@@ -23,5 +23,6 @@ export class SignupComponent {
 
   submitButtonClicked(){
     console.log('signup submit clicked');
+    // API connection handled here
   }
 }
