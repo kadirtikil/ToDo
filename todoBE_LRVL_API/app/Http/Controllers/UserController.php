@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 use App\Models\User;
 use APP\Models\Tasks;
@@ -11,13 +13,20 @@ class UserController extends Controller
 {
     // User related methods
     public function login(Request $request){
-        // Sanitize data to prevent forgery
 
-        if(!User::find($request->email)){
-            return response()->json(['message' => 'User not found tho']);
+        $creds = $request->validate([
+            'email' => 'required|email|max:255',
+            'password' => 'required|string|max:255',
+        ]);
+
+        // Attempt the login of the user.
+        if(Auth::attempt($creds)){
+            // $request->session()->regenerate();
+
+            return response()->json(['message' => 'user logged in']); 
         }
 
-        return response()->json(['message' => $request]);
+        return response()->json(['message' => 'Log in not possible. Check Credentials.']);
     }   
 
     public function register(Request $request){
@@ -42,10 +51,9 @@ class UserController extends Controller
         // csrf token already set in form , no need to sanitize request
         // using eloquent model to save user, no need to check for injection
         $user = new User;
-
         $user->email = $creds['email'];
         $user->username = $creds['name'];
-        $user->password = $creds['password'];
+        $user->password = Hash::make($creds['password']);
         $user->role = 'role';
         $user->phone = 'phone';
         $user->remember_token = 'temp';
