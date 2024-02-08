@@ -20,13 +20,19 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
+
 // User related Routes
 Route::post('/login', [UserController::class, 'login']);
 Route::post('/register', [UserController::class, 'register']);
-Route::post('/logout', [UserController::class, 'logout']);
 
+// Using middleware to protect from unauthorized activity. 
+// Using functionalities not possible without currently active session by using web, auth middleware.
+Route::middleware(['web', 'auth'])->group( function() {
+    // Logout should only work if a session is running
+    Route::post('/logout', [UserController::class, 'logout']);
 
-// Task related Routes
-Route::post('/createtask', [UserController::class, 'createTask']);
-Route::post('/edit', [UserController::class, 'editTask']);
-Route::post('/deletetask', [UserController::class, 'deleteTask']);
+    // Task related Routes
+    Route::post('/createtask', [UserController::class, 'createTask']);
+    Route::delete('/deletetask/{id}', [UserController::class, 'deleteTask']);
+});    Route::put('/edit/{taskToEdit}', [UserController::class, 'editTask']);

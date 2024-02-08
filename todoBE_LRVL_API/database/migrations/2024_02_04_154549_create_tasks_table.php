@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('author_id');
             $table->string('status');
             $table->string('category');
+            $table->date('deadline');
             $table->timestamps();
         });
     }

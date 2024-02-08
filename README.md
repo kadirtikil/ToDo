@@ -55,3 +55,7 @@ Desweiteren muss der User sich authentifizieren können. Und abhängig von den A
 ## AWS
 
 ## Scoring System
+
+## Notizen 
+- musste "\Illuminate\Session\Middleware\StartSession::class," in die Kernel.php einfügen, weil man sonst nicht auf die Nutzer zugreifen konnte, weil keine Session für diesen gestartet wurde. Durch die Nutzung von StartSession wird nun bei jedem Request eine Session gestartet, welches in dieser Anwendung essentiell ist, weil ohne eine Anmeldung - und somit Session - die Nutzung sowieso nicht möglich ist/sein soll.
+ 

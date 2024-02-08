@@ -14,5 +14,9 @@ class Tasks extends Model
         'body',
         'status',
         'category',
+        'author_id',
+        'deadline',
     ];
+
+    public $timestamps = true;
 }
