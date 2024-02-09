@@ -58,4 +58,7 @@ Desweiteren muss der User sich authentifizieren können. Und abhängig von den A
 
 ## Notizen 
 - musste "\Illuminate\Session\Middleware\StartSession::class," in die Kernel.php einfügen, weil man sonst nicht auf die Nutzer zugreifen konnte, weil keine Session für diesen gestartet wurde. Durch die Nutzung von StartSession wird nun bei jedem Request eine Session gestartet, welches in dieser Anwendung essentiell ist, weil ohne eine Anmeldung - und somit Session - die Nutzung sowieso nicht möglich ist/sein soll.
- 
+
+- httpClient funktioniert seit v14 in Angular nicht mehr für Standalone-Applikationen. (Hier)[https://blog.ninja-squad.com/2022/11/09/angular-http-in-standalone-applications/] der neue weg dazu. Besser ist es, den provideHttpClient() bei app.config.ts einzufügen, weil dieser dann mit appConfig inkludiert wird in der main.ts.
+
+- Füge withFetch() hinzu um httpclient mit fetch apis zu konfigurieren. Dadurch geschieht das Rendering auf der Server-Seite und sorgt somit für bessere Performance.

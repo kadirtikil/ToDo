@@ -33,6 +33,7 @@ Route::middleware(['web', 'auth'])->group( function() {
     Route::post('/logout', [UserController::class, 'logout']);
 
     // Task related Routes
+    Route::put('/edit/{taskToEdit}', [UserController::class, 'editTask']);
     Route::post('/createtask', [UserController::class, 'createTask']);
     Route::delete('/deletetask/{id}', [UserController::class, 'deleteTask']);
-});    Route::put('/edit/{taskToEdit}', [UserController::class, 'editTask']);
+});    

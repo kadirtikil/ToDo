@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BrowserModule } from '@angular/platform-browser';
 
 import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
 
@@ -8,24 +7,36 @@ import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angula
 import { checkEmailInput } from '../validators/emailValidator';
 import { checkPasswordInput } from '../validators/passwordValidator';
 
+// importiere den service, zur kommunikation mit der api
+import { MyApiService } from '../my-api.service';
+
 @Component({
   selector: 'app-signin',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, ],
   templateUrl: './signin.component.html',
   styleUrl: './signin.component.scss'
 })
+@Injectable({providedIn: 'root'})
 export class SigninComponent {
   signinForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email, Validators.minLength(3)]),
     password: new FormControl('', [Validators.required, Validators.minLength(8)]),
   })
 
+  private api = '127.0.0.1/api/login';
+
+  constructor(private MyApiService: MyApiService){}
+  
   submitButtonClicked(){
-    console.log(this.signinForm.value);
-    // this function will check given input and sanitize it, 
-    // before sending it to the backend API via httpclient. 
-    // API connection handled here
+    const creds = this.signinForm.value;
+
+
+    this.MyApiService.authenticateCredentials(creds).subscribe(
+      (response) => console.log(response)
+    );
+
+    console.log('creds are working');
 
   }
 }
