@@ -33,4 +33,12 @@ export class MyApiService {
   deleteTask(id: number): Observable<any>{
     return this.http.delete(`${this.api}deletetask/${id}`);
   }
+
+  testFunc(){
+    return this.http.get(`${this.api}test`);
+  }
+
+  fetchTasks(){
+    return this.http.get(`${this.api}fetchtasks`);
+  }
 }

@@ -90,15 +90,15 @@ class UserController extends Controller
 
 
         // Check if a user is logged in atm
-        if(Auth::check()) {
+/*         if(Auth::check()) {
             // Check if Task already exists, and has the same user
-            if(User::where('title', $creds['title'])->where('author_id', Auth::user()->id)->exists()) {
+            if(User::where('title', $data['title'])->where('author_id', Auth::user()->id)->exists()) {
                 return response()->json(['message' => 'Task already exists.']);
             } 
         } 
         else {
             return response()->json(['msg' => 'No User logged in atm']);
-        }
+        } */
 
         // Else create a new task instance and save it.
         // Create the new task if it doesnt exist.
@@ -113,7 +113,7 @@ class UserController extends Controller
         $task->author_id = Auth::user()->id;
         $task->save();
 
-        return response()->json(['message' => $request]);
+        return response()->json($request);
     }
 
     public function editTask(Request $request, $taskToEdit){
@@ -151,5 +151,12 @@ class UserController extends Controller
         return response()->json(['msg' => 'couldnt delete task. log in & try again.']);
     }
 
+    public function fetchData(){
+        return response()->json([Tasks::all()]);
+    }
 
+    public function testFunc(){
+        // Funktion zum testen des subscribe im frontend für die modals. Um zu prüfen ob diese Rückmeldung ausgegeben wird.
+        return response()->json(['msg' => 'Backend reached.']);
+    }
 }

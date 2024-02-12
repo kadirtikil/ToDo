@@ -7,6 +7,9 @@ import { CommonModule } from '@angular/common';
 import { checkEmailInput } from '../validators/emailValidator';
 import { checkPasswordInput } from '../validators/passwordValidator';
 
+import { MyApiService } from '../my-api.service';
+import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-signup',
   standalone: true,
@@ -21,8 +24,14 @@ export class SignupComponent {
     password: new FormControl('', Validators.required),
   })
 
+  constructor(private myApiService: MyApiService) {}
+
   submitButtonClicked(){
     console.log('signup submit clicked');
     // API connection handled here
+    const creds = this.signupForm.value;
+
+    this.myApiService.registerNewUser(creds);    
+
   }
 }

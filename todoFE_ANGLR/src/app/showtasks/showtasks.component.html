@@ -1,9 +1,18 @@
-<div class="post-container">
-    <div class="post">
-        <h2 class="post-title">title</h2>
-        <p class="post-description">description</p>
-        <p class="post-date">Posted on: </p>
-        <p class="post-update">Last Updated:</p>
-        <p class="post-author">Author:</p>
-    </div>
+<div *ngIf="!tasks; else showTasksSection" class="notasksforthisuser">
+    <p>No Tasks Found For User</p>
 </div>
+
+<ng-template #showTasksSection>
+    <div class="post-container" *ngFor="let row of tasks">
+        <div class="post" *ngFor="let task of row">
+            <h2 class="post-title">{{task.title}}</h2>
+            <p class="post-description">{{task.body}}</p>
+            <p class="post-date">Posted on: {{task.created_at}} </p>
+            <p class="post-update">Last Updated: {{task.updated_at}}</p>
+            <p class="post-author">Category: {{task.category}}</p>
+            <p class="post-author">Deadline: {{task.deadline}}</p>
+            <p class="edit" (click)="openEditor()">edit</p>
+            <p class="delete" (click)="deleteTask()">del</p>
+        </div>
+    </div>
+</ng-template>

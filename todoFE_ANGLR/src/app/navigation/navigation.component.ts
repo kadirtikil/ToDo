@@ -6,7 +6,6 @@ import { CreateTasksComponent } from '../create-tasks/create-tasks.component';
 import { SigninComponent } from '../signin/signin.component';
 import { SignupComponent } from '../signup/signup.component';
 
-import { MyApiService } from '../my-api.service';
 
 
 @Component({
@@ -23,13 +22,15 @@ export class NavigationComponent {
 
   constructor(private dialog: MatDialog){}
 
+
+
   openCreateTaskDialog(){
     const dialogconfig = new MatDialogConfig();
 
     dialogconfig.disableClose = true;
     dialogconfig.autoFocus = true;
 
-    this.dialog.open(CreateTasksComponent)
+    this.dialog.open(CreateTasksComponent);
   }
 
   openSignInDialog(){
@@ -38,7 +39,7 @@ export class NavigationComponent {
     dialogconfig.disableClose = true;
     dialogconfig.autoFocus = true;
 
-    this.dialog.open(SigninComponent)
+    this.dialog.open(SigninComponent);
   }
 
   openSignUpDialog(){
@@ -47,10 +48,10 @@ export class NavigationComponent {
     dialogconfig.disableClose = true;
     dialogconfig.autoFocus = true;
 
-    this.dialog.open(SignupComponent)
+    this.dialog.open(SignupComponent);
   }
 
   logout(){
-    console.log("logout")
+    console.log("logout");
   }
 }

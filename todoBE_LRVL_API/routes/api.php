@@ -34,6 +34,10 @@ Route::middleware(['web', 'auth'])->group( function() {
 
     // Task related Routes
     Route::put('/edit/{taskToEdit}', [UserController::class, 'editTask']);
-    Route::post('/createtask', [UserController::class, 'createTask']);
     Route::delete('/deletetask/{id}', [UserController::class, 'deleteTask']);
 });    
+
+Route::get('/fetchtasks', [UserController::class, 'fetchData']);
+Route::post('/createtask', [UserController::class, 'createTask']);
+
+Route::get('/test', [UserController::class, 'testFunc']);
