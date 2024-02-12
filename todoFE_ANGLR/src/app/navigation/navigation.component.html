@@ -1,14 +1,14 @@
 <nav class="navbar">
-<div class="navbar-title">TODO</div>
-    <div class="navbar-options">
-        <div class="navbar-username">TEST</div>
-        <div class="navbar-option">Create Task</div>
-        <div class="navbar-option">Sign In</div>
-        <div class="navbar-option">Sign Up</div>
-        <div class="navbar-search">
-            <input type="text" placeholder="Search tasks">
-        </div>
-    <div class="navbar-option">Logout</div>
-</div>
+    <div class="navbar-title">TODO</div>
+        <div class="navbar-options">
+            <div class="navbar-username">Squidward</div>
+            <div class="navbar-option" (click)="openCreateTaskDialog()">Create Task</div>
+            <div class="navbar-option" (click)="openSignInDialog()">Sign In</div>
+            <div class="navbar-option"(click)="openSignUpDialog()">Sign Up</div>
+            <div class="navbar-search">
+                <input type="text" placeholder="Search tasks">
+            </div>
+        <div class="navbar-option" (click)="logout()">Logout</div>
+    </div>
 </nav>
   
