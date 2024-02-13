@@ -85,7 +85,7 @@ class UserController extends Controller
             'body' => 'required|string|max:1000',
             'status' => 'required|string|max:255',
             'category' => 'required|string|max:255',
-            'deadline' => 'required|date',
+            'deadline' => 'required|string',
         ]);
 
 
@@ -110,7 +110,7 @@ class UserController extends Controller
         $task->status = $data['status'];
         $task->category = $data['category'];
         $task->deadline = $data['deadline'];
-        $task->author_id = Auth::user()->id;
+        $task->author_id = 1;
         $task->save();
 
         return response()->json($request);

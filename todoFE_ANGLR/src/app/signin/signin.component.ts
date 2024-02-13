@@ -35,8 +35,5 @@ export class SigninComponent {
     this.MyApiService.authenticateCredentials(creds).subscribe(
       (response) => console.log(response)
     );
-
-    console.log('creds are working');
-
   }
 }

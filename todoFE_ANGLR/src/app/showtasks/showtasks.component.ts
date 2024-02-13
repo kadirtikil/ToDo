@@ -19,11 +19,13 @@ export class ShowtasksComponent {
 
   constructor(private matDialog: MatDialog, private myApiService: MyApiService) {}
 
-  openEditor(){
-    const dialogconfig = new MatDialogConfig;
-
-    this.matDialog.open(EdittasksComponent);
+  openEditor(task: any): void {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = { task: task };
+  
+    this.matDialog.open(EdittasksComponent, dialogConfig);
   }
+  
 
   deleteTask(){
     console.log(this.tasks);

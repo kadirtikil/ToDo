@@ -11,7 +11,7 @@
             <p class="post-update">Last Updated: {{task.updated_at}}</p>
             <p class="post-author">Category: {{task.category}}</p>
             <p class="post-author">Deadline: {{task.deadline}}</p>
-            <p class="edit" (click)="openEditor()">edit</p>
+            <p class="edit" (click)="openEditor(task)">edit</p>
             <p class="delete" (click)="deleteTask()">del</p>
         </div>
     </div>

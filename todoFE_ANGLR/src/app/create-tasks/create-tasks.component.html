@@ -1,16 +1,29 @@
 <div class="post-form">
-    <form>
+    <form [formGroup]="newtaskForm">
       <label for="title">Title:</label>
-      <input type="text" id="title" name="title" required>
+      <input type="text" id="title" name="title" required formControlName="title">
   
       <label for="description">Description:</label>
-      <textarea id="description" name="description" required></textarea>
+      <textarea id="description" name="description" required formControlName="body"></textarea>
   
       <label for="dueDate">Due Date:</label>
-      <input type="date" id="dueDate" name="dueDate"  required>
+      <input type="date" id="dueDate" name="dueDate"  required formControlName="deadline">
 
-      
-      <button type="submit">Create Post</button>
+      <label for="category">Category:</label>
+      <input type="text" id="category" name="category" formControlName="category">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Status</mat-label>
+        <mat-select [(value)]="selectedStatus" formControlName="status">
+          <mat-option value="done">Done</mat-option>
+          <mat-option value="pending">Pending</mat-option>
+          <mat-option value="urgent">Urgent</mat-option>
+          <mat-option value="failed">Failed</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button type="">Create Post</button>
+      <p id="test" (click)="submitNewTask()">test </p>
     </form>
   </div>
   
